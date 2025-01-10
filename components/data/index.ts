@@ -90,6 +90,14 @@ export const projects = [
   },
   {
     id: 3,
+    title: "Fabio dératiseur",
+    des: "Site vitrine pour un professionnel de la dératisation",
+    img: "/s3.png",
+    iconLists: ["/next.svg", "/css.svg", "/js.svg"],
+    link: "https://ecommerce-front-sylvain.vercel.app",
+  },
+  {
+    id: 4,
     title: "Skate E-commerce",
     des: "Une application e-commerce pour la vente de skate et de produits affiliés à cet univers. Paiement stripe, base de données mongodb",
     img: "/s3.png",
@@ -97,7 +105,7 @@ export const projects = [
     link: "https://ecommerce-front-sylvain.vercel.app",
   },
   {
-    id: 4,
+    id: 5,
     title: "Skate E-commerce Admin",
     des: "Un site pour gérer son site e-commerce de A à Z. De l'ajout de nouveaux articles jusqu'à la mise en place de promo. j'ai pensé à tous.",
     img: "/s3.png",
