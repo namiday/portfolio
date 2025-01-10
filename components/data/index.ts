@@ -135,7 +135,7 @@ export const testimonials = [
   },
   {
     quote:
-      "Je me suis déjà retrouver seul avec lui dans un ascenceur. Je crois que c'est ça une expérience de mort imminente !",
+      "Je me suis déjà retrouvée seule avec lui dans un ascenceur. Je crois que c'est ça une expérience de mort imminente !",
     name: "Marine R.",
     title: "Collaboratrice ravie",
   },
