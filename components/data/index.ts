@@ -51,7 +51,7 @@ export const gridItems = [
 
   {
     id: 5,
-    title: "Je travaille sur un site pour un Jeu de Rôles interactif",
+    title: "Je développe un site pour un Jeu de Rôles interactif",
     description: "Dernière nouvelles",
     className: "md:col-span-3 md:row-span-2",
     imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",

@@ -49,7 +49,7 @@ const Hero = () => {
             Bonjour, je suis Alexandre
           </p>
 
-          <a href='#presentation'>
+          <a href='#projects'>
             <MagicButton
               title='Voir mon travail'
               icon={<FaLocationArrow />}
