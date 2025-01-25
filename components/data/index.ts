@@ -120,30 +120,35 @@ export const testimonials = [
       "Ce type me doit 10 balles...",
     name: "Charly B.",
     title: "Meilleur ami",
+    image : "avis1.webp"
   },
   {
     quote:
       "Un jour il s'est chié dessus en daily",
     name: "Volo D.",
     title: "Collègue de confiance",
+    image : "avis2.webp"
   },
   {
     quote:
       "Si je recroise ce type, je l'en...",
     name: "Adrien T.",
     title: "Client satisfait",
+    image : "avis3.webp"
   },
   {
     quote:
       "Je me suis déjà retrouvée seule avec lui dans un ascenceur. Je crois que c'est ça une expérience de mort imminente !",
     name: "Marine R.",
     title: "Collaboratrice ravie",
+    image : "avis4.webp"
   },
   {
     quote:
       "De ma vie, je vous jure que ...",
     name: "Maxime R.",
     title: "Formateur",
+    image : "avis1.webp"
   },
 ];
 

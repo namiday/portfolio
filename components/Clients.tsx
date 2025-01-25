@@ -5,9 +5,9 @@ import { companies, testimonials } from './data';
 const Clients = () => {
   return (
     <div className='py-20' id='testimonials'>
-      <h1 className="text-center text-4xl font-bold mt-4 ">
+      <h1 className="text-center text-4xl font-bold mt-4 text-black ">
         Les avis de 
-        <span className='text-purple'> mes clients</span>
+        <span className='text-sky-800'> mes clients</span>
       </h1>
       <div className='h-[50vh] md:h-[30rem] rounded-md flex flex-col antialiased items-center relative overflow-hidden'>
         <InfiniteMovingCards

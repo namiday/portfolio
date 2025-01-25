@@ -38,14 +38,14 @@ const Hero = () => {
       </div>
       <div className="flex justify-center relative my-20 z-10">
         <div className='max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center'>
-          <h2 className='uppercase tracking-widest text-xs text-center text-blue-100 max-w-80'>
-            DevWeb
+          <h2 className='uppercase tracking-widest text-xs text-center text-black max-w-80'>
+            Développeur Web
           </h2>
           <TextGenerateEffect
-            className='text-center text-[40px] md:text-5xl lg:text-6xl'
+            className='text-center text-[40px] md:text-5xl lg:text-6xl text-black'
             words='Crée des projets pour vous'
           />
-          <p className='text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl'>
+          <p className='text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl text-black'>
             Bonjour, je suis Alexandre
           </p>
 
