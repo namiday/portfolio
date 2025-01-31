@@ -5,19 +5,24 @@ import { Chrono } from 'react-chrono';
 
 const items = [
   {
-    title: '2025',
-    cardTitle: 'Software Engineer',
-    cardDetailedText: 'Building scalable applications.',
+    title: '2021-...',
+    cardTitle: 'Consultant informatique dans la défense',
+    cardDetailedText: 'Developpement sur des sujets embarqués en C, C++ avec une forte composante temps réel.',
   },
   {
-    title: '2022',
-    cardTitle: "Master's Degree",
-    cardDetailedText: 'AI and Machine Learning.',
+    title: '2018-2021',
+    cardTitle: "Ingénieur Informatique R&D",
+    cardDetailedText: 'Developpement de fonctionnalités 5G en C++.',
   },
   {
-    title: '2018',
-    cardTitle: "Bachelor's Degree",
-    cardDetailedText: 'Computer Science and Engineering.',
+    title: '2016-2018',
+    cardTitle: "Ingénieur embarqué alternant",
+    cardDetailedText: 'Développement de programme de suivi pour des bancs de tests sur puces électroniques',
+  },
+  {
+    title: '2015-2016',
+    cardTitle: "Apprenti développeur Mobile et web",
+    cardDetailedText: "Developpement d'application mobile de gestion de production pour les cadres de l'entreprise",
   },
 ];
 
@@ -25,7 +30,15 @@ const VerticalTimeline = () => {
   return (
     <div>
       <h1 style={{ textAlign: 'center' }}>My Timeline</h1>
-      <Chrono items={items} mode="VERTICAL_ALTERNATING" />
+      <Chrono items={items} 
+        mode="VERTICAL_ALTERNATING" 
+        theme={{
+          primary: '#1B263B',
+          secondary: '#1B263B',
+          cardBgColor: 'white',
+          titleColor: 'black',
+          titleColorActive: 'white',
+        }} />
     </div>
   );
 };

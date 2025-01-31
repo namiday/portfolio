@@ -6,12 +6,6 @@ import { FaLocationArrow } from 'react-icons/fa'
 
 const Hero = () => {
 
-  const scrollToContact = () => {
-    const anc = document.getElementById('contact');
-
-    if(anc){ anc.scrollIntoView({ behavior : 'smooth', block: "start"});}
-  }
-
   return (
     <div className='pb-20 pt-36'>
       <div>
