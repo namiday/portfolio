@@ -1,22 +1,18 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import { IoCopyOutline } from "react-icons/io5";
-import Lottie from "react-lottie";
-import Image from "next/image"; // Import Image from next/image
+import Image from "next/image";
 import { cn } from "@/lib/utils";
-
 import GridGlobe from "./GridGlobe";
-import animationData from "./../data/confetti.json";
 import MagicButton from "./MagicButton";
 
-export const BentoGrid = ({
-  className,
-  children,
-}: {
-  className?: string;
-  children?: React.ReactNode;
-}) => {
+// Dynamically import Lottie with SSR disabled
+const Lottie = dynamic(() => import("react-lottie"), { ssr: false });
+import animationData from "./../data/confetti.json";
+
+export const BentoGrid = ({ className, children }) => {
   return (
     <div
       className={cn(
@@ -38,20 +34,15 @@ export const BentoGridItem = ({
   imgClassName,
   titleClassName,
   spareImg,
-}: {
-  className?: string;
-  id: number;
-  title?: string | React.ReactNode;
-  description?: string | React.ReactNode;
-  img?: string;
-  imgClassName?: string;
-  titleClassName?: string;
-  spareImg?: string;
 }) => {
   const leftLists = ["ReactJS", "MongoDB", "AWS S3"];
   const rightLists = ["C", "Python", "C++"];
-
   const [copied, setCopied] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const defaultOptions = {
     loop: copied,
@@ -63,8 +54,7 @@ export const BentoGridItem = ({
   };
 
   const handleCopy = () => {
-    const text = "alexandre.collot4@gmail.com";
-    navigator.clipboard.writeText(text);
+    navigator.clipboard.writeText("alexandre.collot4@gmail.com");
     setCopied(true);
   };
 
@@ -86,21 +76,17 @@ export const BentoGridItem = ({
             <Image
               src={img}
               alt={img}
-              fill // Automatically fills the container dimensions
+              fill
               className={cn(imgClassName, "object-cover object-center")}
             />
           )}
         </div>
-        <div
-          className={`absolute right-0 -bottom-5 ${
-            id === 5 && "w-full opacity-80"
-          }`}
-        >
+        <div className={`absolute right-0 -bottom-5 ${id === 5 && "w-full opacity-80"}`}>
           {spareImg && (
             <Image
               src={spareImg}
               alt={spareImg}
-              fill // Automatically adapts to the container dimensions
+              fill
               className="object-cover object-center w-full h-full"
             />
           )}
@@ -115,9 +101,7 @@ export const BentoGridItem = ({
           <div className="font-sans font-extralight md:max-w-32 md:text-xs lg:text-base text-sm text-[#C1C2D3] z-10">
             {description}
           </div>
-          <div
-            className={`font-sans text-lg lg:text-3xl max-w-96 font-bold z-10`}
-          >
+          <div className="font-sans text-lg lg:text-3xl max-w-96 font-bold z-10">
             {title}
           </div>
 
@@ -129,21 +113,19 @@ export const BentoGridItem = ({
                 {leftLists.map((item, i) => (
                   <span
                     key={i}
-                    className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
-                    lg:opacity-100 rounded-lg text-center bg-[#10132E]"
+                    className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]"
                   >
                     {item}
                   </span>
                 ))}
-                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#10132E]"></span>
+                <span className="lg:py-4 lg:px-3 py-4 px-3 rounded-lg text-center bg-[#10132E]"></span>
               </div>
               <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
-                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#10132E]"></span>
+                <span className="lg:py-4 lg:px-3 py-4 px-3 rounded-lg text-center bg-[#10132E]"></span>
                 {rightLists.map((item, i) => (
                   <span
                     key={i}
-                    className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
-                    lg:opacity-100 rounded-lg text-center bg-[#10132E]"
+                    className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]"
                   >
                     {item}
                   </span>
@@ -151,16 +133,12 @@ export const BentoGridItem = ({
               </div>
             </div>
           )}
+
           {id === 6 && (
             <div className="mt-5 relative">
-              <div
-                className={`absolute -bottom-5 right-0 ${
-                  copied ? "block" : "block"
-                }`}
-              >
-                <Lottie options={defaultOptions} height={200} width={400} />
+              <div className="absolute -bottom-5 right-0">
+                {isClient && <Lottie options={defaultOptions} height={200} width={400} />}
               </div>
-
               <MagicButton
                 title={copied ? "Email copié !" : "Copiez mon Email !"}
                 icon={<IoCopyOutline />}
