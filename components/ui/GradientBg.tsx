@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 // A hook to useEffect only on the client
-const useIsomorphicEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;
+// const useIsomorphicEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
 export const BackgroundGradientAnimation = ({
   gradientBackgroundStart = "rgb(108, 0, 162)",
