@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Chrono } from 'react-chrono';
 
 const items = [
@@ -27,10 +27,23 @@ const items = [
 ];
 
 const VerticalTimeline = () => {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setIsClient(true);
+    }
+  }, []);
+
+  if (!isClient) {
+    return null; // or a loading spinner
+  }
+
   return (
     <div>
       <h1 style={{ textAlign: 'center' }}>My Timeline</h1>
-      <Chrono items={items} 
+      <Chrono 
+        items={items} 
         mode="VERTICAL_ALTERNATING" 
         theme={{
           primary: '#1B263B',
@@ -38,7 +51,8 @@ const VerticalTimeline = () => {
           cardBgColor: 'white',
           titleColor: 'black',
           titleColorActive: 'white',
-        }} />
+        }} 
+      />
     </div>
   );
 };
