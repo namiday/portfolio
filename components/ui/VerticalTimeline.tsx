@@ -7,7 +7,7 @@ const items = [
   {
     title: '2021-...',
     cardTitle: 'Consultant informatique dans la défense',
-    cardDetailedText: 'Developpement sur des sujets embarqués en C, C++ avec une forte composante temps réel.',
+    cardDetailedText: "Developpement sur des sujets embarqués en C, C++ avec une forte composante temps réel. Développement de drivers pour des cartes électroniques. Développement de tests unitaires et d'intégration.  ",
   },
   {
     title: '2018-2021',
