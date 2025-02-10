@@ -19,8 +19,8 @@ const Footer = () => {
 
       <div className="flex flex-col items-center">
         <h1 className="heading lg:max-w-[45vw] text-black">
-          Prêt à <span className="text-sky-800">your</span> développer
-          votre site ?
+          Prêt à  développer <span className="text-sky-800">votre</span>
+          site ?
         </h1>
         <p className=" md:mt-10 my-5 text-center text-black">
           Contactez moi dès aujourd&apos;hui pour avoir un devis
